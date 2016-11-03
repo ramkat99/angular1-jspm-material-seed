@@ -50,6 +50,8 @@ jspm_packages
 
 .idea/
 
+.tmp/
+
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
