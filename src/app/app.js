@@ -18,37 +18,37 @@ import componentsModule from './components/components';
 import coreModule from './core/core';
 
 let appModule = angular.module('app-module', [
-    'ngRoute',
-    'ngSanitize',
-    'ngMessages',
-    'ngMaterial',
+  'ngRoute',
+  'ngSanitize',
+  'ngMessages',
+  'ngMaterial',
 
-    toolkitModule.name,
-    navLockModule.name,
+  toolkitModule.name,
+  navLockModule.name,
 
-    componentsModule.name,
-    coreModule.name
+  componentsModule.name,
+  coreModule.name
 ]);
 
 @Component({
-    selector: 'app'
+  selector: 'app'
 })
 @View({
-    template: template,
-    replace: true
+  template: template,
+  replace: true
 })
 @Inject('NavLockService', '$state')
 class App {
-    constructor(NavLockService, $state) {
-        this.myName = 'Manie Coetzee';
-        NavLockService.sayHello();
-    }
+  constructor(NavLockService, $state) {
+    this.myName = 'Manie Coetzee';
+    NavLockService.sayHello();
+  }
 }
 
 angular.element(document).ready(function() {
-    angular.bootstrap(document, [appModule.name], {
-        strictDi: false
-    });
+  angular.bootstrap(document, [appModule.name], {
+    strictDi: true
+  });
 });
 
 export default appModule;
