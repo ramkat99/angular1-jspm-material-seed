@@ -48,6 +48,8 @@ jspm_packages
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
 
+.idea/
+
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
