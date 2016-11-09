@@ -17,6 +17,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.5.8",
     "angular-animate": "github:angular/bower-angular-animate@1.5.8",
     "angular-material": "github:angular/bower-material@1.1.1",
+    "angular-material-icons": "npm:angular-material-icons@0.7.1",
     "angular-messages": "github:angular/bower-angular-messages@1.5.8",
     "angular-route": "github:angular/bower-angular-route@1.5.8",
     "angular-sanitize": "github:angular/bower-angular-sanitize@1.5.8",
@@ -24,6 +25,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.32",
+    "material-design-icons": "github:google/material-design-icons@3.0.1",
     "ramkat99/xib-angular-toolkit": "jspm:ramkat99/xib-angular-toolkit@0.1.0",
     "ramkat99/xib-nav-lock": "jspm:ramkat99/xib-nav-lock@0.1.0",
     "text": "github:systemjs/plugin-text@0.0.9",
@@ -73,6 +75,9 @@ System.config({
       "angular": "github:angular/bower-angular@1.5.8",
       "angular-route": "github:angular/bower-angular-route@1.5.8",
       "angular-ui-router": "npm:angular-ui-router@0.3.1"
+    },
+    "npm:angular-material-icons@0.7.1": {
+      "angular": "npm:angular@1.5.8"
     },
     "npm:angular-ui-router@0.3.1": {
       "angular": "npm:angular@1.5.8",

@@ -1,9 +1,230 @@
 <div layout="column" flex>
+  <md-toolbar layout="row" md-whiteframe="2" class="md-hue-3" >
+    <img src="images/vodacom-logo.png" style="height: 60px;"/>
+    <!--<button ng-click="toggleSidenav('left')" class="menuBtn">
+      <md-icon md-svg-src="menu" class="md-primary"></md-icon>
+    </button>-->
+    <h1 class="md-toolbar-tools" layout-align-gt-sm="left">Automated Repository Of Controls</h1>
+  </md-toolbar>
+  <md-content layout="row" flex>
+    <div layout="column">
+      <!--<md-sidenav style="margin-top: 1px;" class="md-sidenav-left" md-whiteframe="2" md-component-id="left" md-is-locked-open="true" flex ng-mouseenter="vm.onMouseEnter()" ng-mouseleave="vm.onMouseLeave()">-->
+      <md-sidenav style="margin-top: 1px;" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true" flex>
+        <div>
+          <md-button ng-click="vm.toggleNav()" style="min-width: 0px;">
+            <md-icon md-svg-src="menu" class="md-primary"></md-icon>
+          </md-button>
+          <div ng-show="!vm.navOpen">
+          <md-button ng-click="vm.openLeftMenu()" style="min-width: 0px;">
+            <md-icon md-svg-src="android" class="md-primary"></md-icon>
+          </md-button>
+          <md-button ng-click="vm.openLeftMenu()" style="min-width: 0px;">
+            <md-icon md-svg-src="remove" class="md-primary"></md-icon>
+          </md-button>
+          <md-button ng-click="vm.openLeftMenu()" style="min-width: 0px;">
+            <md-icon md-svg-src="download" class="md-primary"></md-icon>
+          </md-button>
+
+
+          <md-button ng-click="vm.togglePin()" style="min-width: 0px;">
+            <!--<md-icon md-svg-src="pin" ng-show="vm.navPinned && vm.navOpen" ></md-icon>
+            <md-icon md-svg-src="pin-off" ng-show="!vm.navPinned && vm.navOpen"></md-icon>-->
+
+            <md-icon md-svg-src="pin" ng-show="vm.navPinned" ></md-icon>
+            <md-icon md-svg-src="pin-off" ng-show="!vm.navPinned"></md-icon>
+          </md-button>
+          </div>
+          <div ng-show="vm.navOpen">
+            <md-list flex>
+              <md-subheader class="md-no-sticky">Dashboard</md-subheader>
+              <md-list-item class="md-3-line">
+                <div class="md-list-item-text" layout="column">
+                  <h3>Piet</h3>
+                  <h4>Pompies</h4>
+                  <p>Stuffies</p>
+                </div>
+              </md-list-item>
+              <md-divider ></md-divider>
+              <md-subheader class="md-no-sticky">2 line item</md-subheader>
+              <md-list-item class="md-2-line">
+                <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" />
+                <div class="md-list-item-text">
+                  <h3>{{ todos[0].who }}</h3>
+                  <p>Secondary text</p>
+                </div>
+              </md-list-item>
+              <md-divider ></md-divider>
+              <md-subheader class="md-no-sticky">3 line item, long paragraph (see on mobile)</md-subheader>
+            </md-list>
+          </div>
+        </div>
+      </md-sidenav>
+    </div>
+    <div layout="column" flex id="content">
+      <md-content flex class="md-padding">
+        <md-button ng-click="vm.openLeftNav()">Open Side Nav</md-button>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+      </md-content>
+    </div>
+  </md-content>
+
+  <!--
+
+<div layout="column" flex>
   <md-toolbar md-whiteframe="3">
+    <img src="images/vodacom-tear-logo.png" width="60" height="60"/>
     <h1>Hello World</h1>
   </md-toolbar>
   <div layout="row" flex>
-    <md-sidenav md-is-locked-open="true" class="md-whiteframe-6dp">Side NAV</md-sidenav>
-    <md-content flex>Some Content</md-content>
+    &lt;!&ndash;<md-sidenav md-is-locked-open="vm.navPinned" class="md-whiteframe-6dp" id="lef-nav">
+      <h2>Side NAV</h2>
+      <md-button ng-click="vm.closeLeftNav()">
+        Close SideNav
+      </md-button>
+    </md-sidenav>&ndash;&gt;
+    <md-content flex>
+      <div layout="row" flex>
+        <md-sidenav md-component-id="left" md-is-open="true" class="md-whiteframe-6dp" md-is-locked-open="vm.navPinned" flex>
+          Left Nav!
+          <md-button ng-click="vm.pinLeftNav()">
+            Pin Side Nav
+          </md-button>
+        </md-sidenav>
+        <md-content>
+          <md-button ng-click="vm.openLeftMenu()">
+            Open Side Nav
+          </md-button>
+
+          <md-button ng-click="vm.openLeftNav()">
+            Open Side Nav
+          </md-button>
+
+
+
+
+        </md-content>
+      </div>
+      &lt;!&ndash;<md-icon md-font-icon="icon-home" ng-style="{color: 'green', 'font-size':'36px', height:'36px'}">&ndash;&gt;
+
+      <md-button>
+        &lt;!&ndash;<md-icon md-font-icon="email" aria-label="android"></md-icon>&ndash;&gt;
+        <md-icon md-svg-src="android" class="md-primary"></md-icon> Hello Android
+        &lt;!&ndash;<md-icon class="material-icons md-light md-18"> face </md-icon>&ndash;&gt;
+        &lt;!&ndash;<md-icon class="material-icons step">email</md-icon>&ndash;&gt;
+      </md-button>
+
+      <md-icon md-font-icon="icon-home" ng-style="{color: 'green', 'font-size':'36px', height:'36px'}"></md-icon>
+
+      <md-button class="md-primary">
+        <md-icon class="material-icons md-light md-12">face</md-icon> Hello Face
+      </md-button>
+
+      &lt;!&ndash;
+      <md-button class="md-primary" style="min-width: 40px;">
+      </md-button>
+      <md-icon class="material-icons md-light "> face </md-icon>
+      &ndash;&gt;
+    </md-content>
+
+    <br/>
+
   </div>
+</div>-->
+
+
+  <!--<div layout="column" flex>
+    <md-button class="md-fab" aria-label="Eat cake" style="position: fixed; float: left; top: 60px;">
+      <md-icon md-svg-src="android" class="md-primary"></md-icon>
+    </md-button>
+    <md-toolbar layout="row">
+      <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello World</h1>
+    </md-toolbar>
+    <md-content layout="row" flex  layout-fill style="position: relative;">
+      <div layout="column">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="vm.navPinned" flex ng-class=""  layout-fill style="position: relative;">
+          <div layout-fill style="position: relative;">
+            &lt;!&ndash;<md-fab-speed-dial md-open="demo.isOpen" md-direction="right">
+              <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                  <md-icon md-svg-src="android" class="md-primary"></md-icon>
+                </md-button>
+              </md-fab-trigger>
+
+              <md-fab-actions>
+                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                  <md-icon md-svg-src="android" class="md-primary"></md-icon>
+                </md-button>
+                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                  <md-icon md-svg-src="img/icons/facebook.svg" aria-label="Facebook"></md-icon>
+                </md-button>
+                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                  <md-icon md-svg-src="img/icons/hangout.svg" aria-label="Google Hangout"></md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-fab-speed-dial>&ndash;&gt;
+            <md-button ng-click="vm.openLeftMenu()">Close SideNav</md-button>
+            <md-button ng-click="vm.togglePin()">Pin Side Nav</md-button>
+          </div>
+        </md-sidenav>
+      </div>
+      <div layout="column" flex id="content">
+        <md-content flex class="md-padding">
+          <md-button ng-click="vm.openLeftNav()">Open Side Nav</md-button>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+          <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        </md-content>
+      </div>
+    </md-content>-->
+
+
+
+
+  <!--  Working copy -->
+  <!--<md-toolbar layout="row" md-whiteframe="3">
+    <img src="images/vodacom-logo.png"/>
+    <button ng-click="toggleSidenav('left')" class="menuBtn">
+      <md-icon md-svg-src="menu" class="md-primary"></md-icon>
+    </button>
+    <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello World</h1>
+  </md-toolbar>
+  <md-content layout="row" flex>
+    <div layout="column">
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="vm.navPinned" flex>
+        <div>
+          <md-button ng-click="vm.openLeftMenu()">Close SideNav</md-button>
+          <md-button ng-click="vm.togglePin()">Pin Side Nav</md-button>
+        </div>
+      </md-sidenav>
+    </div>
+    <div layout="column" flex id="content">
+      <md-content flex class="md-padding">
+        <md-button ng-click="vm.openLeftNav()">Open Side Nav</md-button>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+        <p ng-repeat="x in [1,2,3,4,5,6,7,8,9,0]">Test {{x}}</p>
+      </md-content>
+    </div>
+  </md-content>-->
 </div>
+
